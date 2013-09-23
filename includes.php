@@ -1,0 +1,12 @@
+<?php
+include('settings.php');
+include('classes/class.EppTCPTransport.php');
+include('classes/class.EppServer.php');
+include('classes/class.EppDatabase.php');
+include('classes/class.EppContact.php');
+include('classes/class.EppRegistrar.php');
+include('classes/class.EppMessage.php');
+include('classes/class.EppDomain.php');
+include('classes/class.EppHost.php');
+include('classes/class.EppTransfer.php');
+?>
