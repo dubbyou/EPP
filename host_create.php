@@ -16,12 +16,12 @@ include('includes.php');
 
 <?php
 
-$myEppHost = new EppHost;
+$myEppDomain = new EppDomain;
 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
 	if(isset($_GET['ID'])){
-    	$myEppHost->Load($_GET['ID']);
+    	$myEppDomain->Load($_GET['ID']);
 	}
 }
 
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
                    <div id="box">
                 	<h3 id="adduser">New Host</h3>
                     <form id="form" action="host_create_process.php" method="post">
-                      <input name="DomainID"  id="DomainID" type="hidden" tabindex="1" value="<?php print $myEppHost->DomainID; ?>" />
+                      <input name="DomainID"  id="DomainID" type="hidden" tabindex="1" value="<?php print $myEppDomain->ID; ?>" />
                       <fieldset id="login">                      
                         <legend>Details </legend>
 						
