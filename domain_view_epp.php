@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
                                                                     
                                                                 </table>	
                                                                 <div align="right">
-                                                                	<a href="domain_view.php?DomainId=<?php print "$myEppDomain->EppDomainID"; ?>">Return </a>
+                                                                	<a href="domain_view.php?DomainId=<?php print "$myEppDomain->ID"; ?>">Return </a>
                                                                 </div>
                                             
 											<?php
