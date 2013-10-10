@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
                      <a href="domain_view_epp.php?ID=<?php print "$myEppDomain->ID"; ?>" >EPP View</a>
                      <a href="domain_change_contact.php?ID=<?php print "$myEppDomain->ID"; ?>" >Change Registrants</a>
                      <a href="domain_syncback.php?ID=<?php print "$myEppDomain->ID"; ?>" >Sync Back</a>
+					 <a href="domain_update_cancel.php?ID=<?php print "$myEppDomain->ID"; ?>" >Cancel Pending</a>
                     <br  />
                      </h3>
 																			<?php
