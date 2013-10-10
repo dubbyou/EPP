@@ -224,6 +224,20 @@ Main functions are placed int this section
 		return $resultcode;
 	}	
 	
+	
+	public function UpdateCancel(){
+		if(DEBUG_lEVEL >=5){ print "<p>Running  domain update cancel</p>";}
+		
+		$myEppServer = new EppServer();
+		if(DEBUG_lEVEL >=5){ print "<p>Starting Connection</p>";}
+		$myEppServer->Start();
+		$myEppServer->Chat($this->xmlUpdateCancel());
+		$resultcode = $myEppServer->ResultCode();
+		$myEppServer->Stop();
+		if(DEBUG_lEVEL >=5){ print "<p>Stopping Connection</p>";}
+		return $resultcode;
+	}
+	
 	public function SyncBack(){
 		if(DEBUG_lEVEL >=5){ print "<p>Running  domain sync back</p>";}
 		
