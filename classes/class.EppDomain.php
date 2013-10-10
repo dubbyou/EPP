@@ -563,4 +563,23 @@ XML generation functions
 			</epp:epp>';		
 	}	
 	
+	
+	public function xmlUpdateCancel(){
+		return '<epp:epp xmlns:epp="urn:ietf:params:xml:ns:epp-1.0" xmlns:domain=
+				"urn:ietf:params:xml:ns:domain-1.0">
+				  <epp:command>
+					<epp:update>
+					  <domain:update>
+						<domain:name>'.$this->Name.'</domain:name>
+					  </domain:update>
+					</epp:update>
+						<epp:extension>
+							<cozadomain:update xsi:schemaLocation="http://co.za/epp/extensions/cozadomain-1-0 coza-domain-1.0.xsd" cancelPendingAction="PendingUpdate">
+							</cozadomain:update>
+						</epp:extension>
+				  </epp:command>
+				</epp:epp>
+				';		
+	}		
+	
 }
