@@ -66,6 +66,7 @@ include('includes.php');
 			while ($i <$num)
 			{
 				$ID=mysql_result($result,$i,"ID");
+				$UID=mysql_result($result,$i,"UID");
 				$Name=mysql_result($result,$i,"Name");
 				$AccountNo=mysql_result($result,$i,"AccountNo");
 

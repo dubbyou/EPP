@@ -251,7 +251,18 @@ Main functions are placed int this section
 		$myEppServer->Stop();
 		if(DEBUG_lEVEL >=5){ print "<p>Stopping Connection</p>";}
 		return $OutXML;
-	}		
+	}	
+
+	public function RegistrantDomainTotal($ContactID){
+		if(DEBUG_lEVEL >=5){ print "<p>Running registrant domain count</p>";}
+		
+			$query = "SELECT COUNT(*) AS Total FROM `domain` where IsActive = '1' and `ContactID` = '$ContactID'";
+			$EppDatabase = new EppDatabase();
+			$result = $EppDatabase->EppDatabaseQuery($query);
+			$total=mysql_result($result,0,"Total");
+			return $total;
+
+	}	
 /*	
 SUBFUNCTIONS
 Supporting functions are placed in this section

@@ -49,7 +49,7 @@ Main functions are placed int this section
 		
 		if(DEBUG_lEVEL >=5){ print "<p>Password: $this->Password</p>";}
 		if(DEBUG_lEVEL >=5){ print "<p>Adding contact to database</p>";}
-		$query = "INSERT INTO `contact` (`ID`, `Type`,`Name`,`AccountNo`, `Street`, `Suburb`, `City`, `Province`,`PostalCode` ,`Country`, `Voice`, `Fax`, `Email`, `Password`, `IsActive`) VALUES (NULL, '$this->Type', '$this->Name', '$this->AccountNo', '$this->Street', '$this->Suburb', '$this->City', '$this->Province', '$this->Postalcode', '$this->Country', '$this->Voice', '$this->Fax', '$this->Email', '$this->Password','1');";
+		$query = "INSERT INTO `contact` (`ID`,`UID`, `Type`,`Name`,`AccountNo`, `Street`, `Suburb`, `City`, `Province`,`PostalCode` ,`Country`, `Voice`, `Fax`, `Email`, `Password`, `IsActive`) VALUES (NULL, NULL, '$this->Type', '$this->Name', '$this->AccountNo', '$this->Street', '$this->Suburb', '$this->City', '$this->Province', '$this->Postalcode', '$this->Country', '$this->Voice', '$this->Fax', '$this->Email', '$this->Password','1');";
 		$EppDatabase = new EppDatabase();
 		$EppDatabase->EppDatabaseQuery($query);
 		$this->ID = $EppDatabase->InsertID;

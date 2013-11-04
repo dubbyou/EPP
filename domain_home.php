@@ -67,6 +67,7 @@ include('includes.php');
 			$num=mysql_numrows($result);
 			$i=0;
 			
+
 			while ($i <$num)
 			{
 				$ID=mysql_result($result,$i,"ID");
