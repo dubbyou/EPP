@@ -72,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
                         <legend>Registarnt Details</legend>
 						<input name="ContactID"  id="ContactID" type="hidden" tabindex="1" value="<?php print $myEppContact->ID; ?>" />
                         <table class="simple">
+							<tr><td width="100px"><label for="ContactUID">UID : </label></td><td width="250px"><input name="ContactUID"  id="ContactUID" disabled="disabled" type="text" tabindex="1" style="width:200px" value="<?php print "$myEppContact->UID"; ?>" /></td><td></td></tr>
                         	<tr><td width="100px"><label for="ContactName">Company Name : </label></td><td width="250px"><input name="ContactName"  id="ContactName" type="text" tabindex="1" style="width:200px" value="<?php print "$myEppContact->Name"; ?>" /></td><td></td></tr>
                               <tr><td width="100px"><label for="AccountNo">Account Number : </label></td><td width="250px"><input name="AccountNo"  id="AccountNo" type="text" tabindex="1" style="width:200px" value="<?php print "$myEppContact->AccountNo"; ?>" /></td><td></td></tr>
 
