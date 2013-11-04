@@ -75,7 +75,7 @@ include('includes.php');
 				
 				
 
-				print "<tr><td>$ID</td><td>$AccountNo</td><td>$Name</td><td>$myEppDomain->RegistrantDomainTotal($UID)</td><td align=\"right\">".
+				print "<tr><td>$ID</td><td>$AccountNo</td><td>$Name</td><td>".$myEppDomain->RegistrantDomainTotal($UID)."</td><td align=\"right\">".
 				"<a href=\"registrant_view.php?ID=".$ID."\"><img src=\"display/img/icons/user.png\" title=\"View Contact\" width=\"16\" height=\"16\" /></a>";
 
 				print	"<a href=\"registrant_delete_confirm.php?ID=".$ID."\"><img src=\"display/img/icons/user_delete.png\" title=\"Delete Contact\" width=\"16\" height=\"16\" /></a>";
