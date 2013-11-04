@@ -73,6 +73,7 @@ include('includes.php');
 						<table class="simple">
                             <tr><td>ID : </td><td><?php print $myEppContact->ID; ?></td><td></td></tr>
                         	<tr><td width="100px">Company Name : </td><td width="250px"><?php print $myEppContact->Name; ?></td><td></td></tr>
+							<tr><td>UID : </td><td><?php print $myEppContact->UID; ?></td><td></td></tr>
                           	<tr><td>Account No : </td><td><?php print $myEppContact->AccountNo; ?></td><td></td></tr>
                             <tr><td>Type : </td><td><?php print $myEppContact->Type; ?></td><td></td></tr>
                                                                                      
@@ -96,7 +97,7 @@ include('includes.php');
 					}
 					?>
 						<div align="right">
-                          <a href="registrant_view.php?ContactId=<?php print "$ContactID"; ?>">Return </a>
+                          <a href="registrant_view.php?ID=<?php print $myEppContact->ID; ?>">Return </a>
                         </div>
 			  </div>
               <div id="infowrap">

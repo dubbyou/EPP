@@ -85,7 +85,9 @@ Main functions are placed int this section
 	public function Update($ID,$Type,$Name,$AccountNo,$Street,$Suburb,$City,$Province,$Postalcode,$Country,$Voice,$Fax,$Email,$Password){
 		//load variables
 		$this->ID = $ID;
-		$this->UID=$this->LoadUID($ID);
+		$this->LoadUID($ID);
+		if(DEBUG_lEVEL >=5){ print "<p>UID: $this->UID</p>";}
+		
 		$this->Type = $Type;
 		$this->Name = $Name;	
 		$this->AccountNo = $AccountNo;	
@@ -158,7 +160,7 @@ Main functions are placed int this section
 	public function Delete($ID){
 		//load
 		$this->ID = $ID;
-		
+		$this->Load($ID);
 		
 		
 		$myEppServer = new EppServer();
@@ -357,7 +359,7 @@ XML generation functions
 				  <epp:command>
 					<epp:update>
 					  <contact:update>
-						<contact:id>'.$this->ID.'</contact:id>
+						<contact:id>'.$this->UID.'</contact:id>
 						<contact:chg>
 						  <contact:postalInfo type="'.$this->Type.'">
 							<contact:name>'.$this->Name.'</contact:name>
@@ -387,7 +389,7 @@ XML generation functions
 				<epp:command>
 				  <epp:delete>
 					<contact:delete>
-					  <contact:id>'.$this->ID.'</contact:id>
+					  <contact:id>'.$this->UID.'</contact:id>
 					</contact:delete>
 				  </epp:delete>
 				</epp:command>
