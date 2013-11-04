@@ -3,6 +3,7 @@
 class EppContact
 {
 	public $ID;
+	public $UID;
 	public $Type;
 	public $Name;
 	public $AccountNo;	
@@ -52,8 +53,10 @@ Main functions are placed int this section
 		$EppDatabase = new EppDatabase();
 		$EppDatabase->EppDatabaseQuery($query);
 		$this->ID = $EppDatabase->InsertID;
+		$this->UID = "dep".$this->ID;
 		
-		if(DEBUG_lEVEL >=5){ print "<p>Contact ID : $this->ID</p>";}
+		
+		if(DEBUG_lEVEL >=5){ print "<p>Contact ID : $this->UID</p>";}
 		
 		$myEppServer = new EppServer();
 		if(DEBUG_lEVEL >=5){ print "<p>Starting Connection</p>";}
@@ -63,6 +66,9 @@ Main functions are placed int this section
 		if(DEBUG_lEVEL >=5){ print "<p>Result code: $resultcode</p>";}
 			if ($resultcode == 1000){
 				if(DEBUG_lEVEL >=5){ print "<p>The contact was created successfully</p>";}
+					$query2 = "UPDATE `contact` SET `UID` = '$this->UID' WHERE `ID` = $this->ID;";
+					$EppDatabase = new EppDatabase();
+					$EppDatabase->EppDatabaseQuery($query2);
 					return 1000;
 			}elseif ($resultcode == 2302){
 				if(DEBUG_lEVEL >=5){ print "<p>The contact already exists</p>";}
@@ -227,6 +233,7 @@ Supporting functions are placed in this section
 			$EppDatabase = new EppDatabase();
 			$result = $EppDatabase->EppDatabaseQuery($query);
 			$this->Type = mysql_result($result,0,"Type");
+			$this->UID = mysql_result($result,0,"UID");
 			$this->Name = mysql_result($result,0,"Name");
 			$this->AccountNo = mysql_result($result,0,"AccountNo");
 			$this->Street = mysql_result($result,0,"Street");	
@@ -306,7 +313,7 @@ XML generation functions
 				  <epp:command>
 					<epp:create>
 					  <contact:create xsi:schemaLocation="urn:ietf:params:xml:ns:contact-1.0 contact-1.0.xsd">
-						<contact:id>'.$this->ID.'</contact:id>
+						<contact:id>'.$this->UID.'</contact:id>
 						<contact:postalInfo type="'.$this->Type.'">
 						  <contact:name>'.$this->Name.'</contact:name>
 						  <contact:addr>
