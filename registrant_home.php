@@ -63,14 +63,19 @@ include('includes.php');
 			$num=mysql_numrows($result);
 			$i=0;
 			
+			$myEppDomain = new EppDomain;
+			
+			
 			while ($i <$num)
 			{
 				$ID=mysql_result($result,$i,"ID");
 				$UID=mysql_result($result,$i,"UID");
 				$Name=mysql_result($result,$i,"Name");
 				$AccountNo=mysql_result($result,$i,"AccountNo");
+				
+				
 
-				print "<tr><td>$ID</td><td>$AccountNo</td><td>$Name</td><td></td><td align=\"right\">".
+				print "<tr><td>$ID</td><td>$AccountNo</td><td>$Name</td><td>$myEppDomain->RegistrantDomainTotal($UID)</td><td align=\"right\">".
 				"<a href=\"registrant_view.php?ID=".$ID."\"><img src=\"display/img/icons/user.png\" title=\"View Contact\" width=\"16\" height=\"16\" /></a>";
 
 				print	"<a href=\"registrant_delete_confirm.php?ID=".$ID."\"><img src=\"display/img/icons/user_delete.png\" title=\"Delete Contact\" width=\"16\" height=\"16\" /></a>";
