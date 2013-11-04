@@ -23,8 +23,8 @@ include('includes.php');
     <div id="topmenu">
             	<ul>
                 	<li><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="registrant_home.php">Registrants</a></li>
-                    <li class="current"><a href="domain_home.php">Domains</a></li>
+                    <li class="current"><a href="registrant_home.php">Registrants</a></li>
+                    <li><a href="domain_home.php">Domains</a></li>
                 	<li><a href="transfer_home.php">Transfer</a></li>
               </ul>
           </div>
@@ -76,7 +76,7 @@ include('includes.php');
                             <tr><td>Suburb : </td><td><?php print $myEppContact->Suburb; ?></td><td></td></tr>
                             <tr><td>City : </td><td><?php print $myEppContact->City; ?></td><td></td></tr>
                             <tr><td>Province : </td><td><?php print $myEppContact->Province; ?></td><td></td></tr>
-                            <tr><td>Code : </td><td><?php print $myEppContact->PostalCode; ?></td><td></td></tr>    
+                            <tr><td>Code : </td><td><?php print $myEppContact->Postalcode; ?></td><td></td></tr>    
                             <tr><td>Country : </td><td><?php print $myEppContact->Country; ?></td><td></td></tr>
                                                     
                             <tr><td><br /></td></tr>
