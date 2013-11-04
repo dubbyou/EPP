@@ -154,7 +154,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
 			{
 				$id=mysql_result($result,$i,"ID");
 				$name=mysql_result($result,$i,"Name");
-				print "<tr><td>$id</td><td>$name</td><td>NULL</td><td>".
+				$ExDate=mysql_result($result,$i,"ExDate");
+				print "<tr><td>$id</td><td>$name</td><td>$ExDate</td><td>".
 				"<a href=\"domain_view.php?DomainId=".$id."\"><img src=\"display/img/icons/user.png\" title=\"Show Contact\" width=\"16\" height=\"16\" /></a>".
 				"</td></tr>";
 				

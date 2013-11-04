@@ -133,6 +133,7 @@ Main functions are placed int this section
 	
 	public function Info($ID){
 		$this->ID = $ID;
+		$this->Load($ID);
 		
 		$myEppServer = new EppServer();
 		if(DEBUG_lEVEL >=5){ print "<p>Starting Connection</p>";}
@@ -141,7 +142,7 @@ Main functions are placed int this section
 		$resultcode = $myEppServer->ResultCode();
 
 			if ($resultcode == 1000){
-				if(DEBUG_lEVEL >=5){ print "<p>The contact was Delete successfully</p>";}
+				if(DEBUG_lEVEL >=5){ print "<p>The contact info was successfully</p>";}
 				$this->xmlViewProcess($myEppServer->OutXML);
 				return 1000;
 			}else{
@@ -156,6 +157,8 @@ Main functions are placed int this section
 	public function Delete($ID){
 		//load
 		$this->ID = $ID;
+		
+		
 		
 		$myEppServer = new EppServer();
 		if(DEBUG_lEVEL >=5){ print "<p>Starting Connection</p>";}
@@ -386,7 +389,7 @@ XML generation functions
 			  <epp:command>
 				<epp:info>
 				  <contact:info>
-					<contact:id>'.$this->ID.'</contact:id>
+					<contact:id>'.$this->UID.'</contact:id>
 				  </contact:info>
 				</epp:info>
 			  </epp:command>
