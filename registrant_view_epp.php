@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
 						<br />
 						<table class="simple">
                             <tr><td>ID : </td><td><?php print $myEppContact->ID; ?></td><td></td></tr>
+							<tr><td>UID : </td><td><?php print $myEppContact->UID; ?></td><td></td></tr>
                         	<tr><td width="100px">Company Name : </td><td width="250px"><?php print $myEppContact->Name; ?></td><td></td></tr>
                                                                                      
                             <tr><td><br /></td></tr>
@@ -89,6 +90,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
                             <tr><td>Email : </td><td><?php print $myEppContact->Email; ?></td><td></td></tr>
                             <tr><td><br /></td></tr>
                         </table>	
+						
+						
+						<div align="right">
+                            <a href="registrant_home.php?ID=<?php print $myEppContact->ID; ?>">Return </a>
+                        </div>
                         
 			  </div>
               <div id="infowrap">

@@ -85,6 +85,7 @@ Main functions are placed int this section
 	public function Update($ID,$Type,$Name,$AccountNo,$Street,$Suburb,$City,$Province,$Postalcode,$Country,$Voice,$Fax,$Email,$Password){
 		//load variables
 		$this->ID = $ID;
+		$this->UID=$this->LoadUID($ID);
 		$this->Type = $Type;
 		$this->Name = $Name;	
 		$this->AccountNo = $AccountNo;	
@@ -255,6 +256,15 @@ Supporting functions are placed in this section
 			$this->IsPendingUpdate = mysql_result($result,0,"IsPendingUpdate");							
 			$this->ID = $ID;
 	}
+	
+		public function LoadUID($ID){
+			$query = "SELECT *  FROM `contact` where ID = '$ID'";
+			$EppDatabase = new EppDatabase();
+			$result = $EppDatabase->EppDatabaseQuery($query);
+			$this->UID = mysql_result($result,0,"UID");
+
+	}
+	
 	
 	public function TotalActive(){
 			$query = "SELECT COUNT(*) AS Total FROM `contact` where IsActive = '1'";

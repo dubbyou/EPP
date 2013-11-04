@@ -32,7 +32,7 @@ class EPPTCPTransport{
        $result = stream_context_set_option($context, 'ssl', 'allow_self_signed', true);
 
        if ($clientpemfile) {
-         print "Connecting using: '$clientpemfile'\n";
+         //print "Connecting using: '$clientpemfile'\n";
          stream_context_set_option($context, 'ssl', 'local_cert', $clientpemfile);
        }
 
